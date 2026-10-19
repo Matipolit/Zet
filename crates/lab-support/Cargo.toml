@@ -1,0 +1,16 @@
+[package]
+name = "lab-support"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Measurement tooling for the zet rendering lab: GPU timers, capture, image metrics, benchmark records"
+
+[dependencies]
+wgpu.workspace = true
+image.workspace = true
+half.workspace = true
+bytemuck.workspace = true
+pollster.workspace = true
+anyhow.workspace = true
+log.workspace = true

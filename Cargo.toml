@@ -1,0 +1,34 @@
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+[workspace.package]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[workspace.dependencies]
+lab-support = { path = "crates/lab-support" }
+
+wgpu = { version = "30.0", default-features = false, features = ["std", "vulkan", "wgsl"] }
+winit = "0.30.13"
+egui = "0.36.2"
+egui-wgpu = { version = "0.36.2", features = ["winit"] }
+egui-winit = { version = "0.36.2", default-features = false, features = ["wayland", "x11"] }
+image = { version = "0.25", default-features = false, features = ["png", "exr"] }
+half = "2.4"
+bytemuck = { version = "1.21", features = ["derive"] }
+glam = "0.30"
+pollster = "0.4"
+clap = { version = "4.5", features = ["derive"] }
+anyhow = "1.0"
+log = "0.4"
+env_logger = "0.11"
+
+# Shader compilation and image work are slow in unoptimized builds; keep
+# dependencies optimized even in `cargo run` without `--release`.
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+debug = 1

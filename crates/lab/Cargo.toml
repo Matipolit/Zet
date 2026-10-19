@@ -1,0 +1,22 @@
+[package]
+name = "lab"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "The zet rendering lab: a window shell around a renderer you write"
+
+[dependencies]
+lab-support.workspace = true
+wgpu.workspace = true
+winit.workspace = true
+egui.workspace = true
+egui-wgpu.workspace = true
+egui-winit.workspace = true
+glam.workspace = true
+bytemuck.workspace = true
+pollster.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+log.workspace = true
+env_logger.workspace = true
