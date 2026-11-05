@@ -14,10 +14,13 @@ use clap::Parser;
 use std::path::PathBuf;
 
 /// The renderer the shell drives. Change this when you replace `ClearRenderer`.
-type ActiveRenderer = renderer::ClearRenderer;
+type ActiveRenderer = renderer::WeekendRenderer;
 
 #[derive(Parser, Debug, Clone)]
-#[command(name = "lab", about = "zet rendering lab: a window shell around the renderer in src/renderer.rs")]
+#[command(
+    name = "lab",
+    about = "zet rendering lab: a window shell around the renderer in src/renderer.rs"
+)]
 pub struct Args {
     #[arg(long, default_value_t = 1280)]
     pub width: u32,
